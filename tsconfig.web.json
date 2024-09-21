@@ -14,6 +14,7 @@
       "@renderer/*": [
         "src/renderer/src/*"
       ]
-    }
+    },
+    "target": "ES2022",
   }
 }
