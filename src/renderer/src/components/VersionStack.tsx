@@ -1,11 +1,11 @@
-import { BonusType } from '@renderer/consts'
+import { ShowBonusType } from '../../../common/consts'
 import classNames from 'classnames'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 // NOTE: 古い結果が最初になるように渡す
 export interface VersionStackProps {
   game: number
-  bonusType: BonusType
+  bonusType: ShowBonusType
 }
 
 const VersionStack = ({ game, bonusType }: VersionStackProps): JSX.Element => {
@@ -37,9 +37,13 @@ const VersionStack = ({ game, bonusType }: VersionStackProps): JSX.Element => {
     []
   )
 
+  const bottomColor =
+    bonusType == 'BIG' ? 'bg-red-300' : bonusType == 'REG' ? 'bg-yellow-200' : 'bg-gray-300'
   return (
     <div className={classNames('flex', 'flex-col-reverse')}>
-      <div>{bonusType}</div>
+      <div className={classNames('text-center', 'font-bold', bottomColor)}>
+        {bonusType != 'NONE' ? bonusType : '\u00A0'}
+      </div>
       {stackRange.map((_, i) => (
         <div
           key={i}
@@ -47,7 +51,7 @@ const VersionStack = ({ game, bonusType }: VersionStackProps): JSX.Element => {
             switchColorByIndex(i) + (switchColorByIndex(i) == redClass && !show ? ' invisible' : '')
           }
         >
-          {i}
+          &nbsp;
         </div>
       ))}
       <div className={classNames('text-center', 'font-bold')}>{game}</div>

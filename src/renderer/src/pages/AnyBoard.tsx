@@ -1,6 +1,8 @@
 import Board from '@renderer/components/Board'
 import Counter from '@renderer/components/Counter'
+import Pocket from '@renderer/components/Pocket'
 import Versions from '@renderer/components/Versions'
+import { FiveSlot } from '../../../common/consts'
 import classNames from 'classnames'
 
 const AnyBoard = (): JSX.Element => {
@@ -17,8 +19,19 @@ const AnyBoard = (): JSX.Element => {
           versions={[
             [223, 'BIG'],
             [18, 'REG'],
-            [1024, 'BIG']
+            [1024, 'BIG'],
+            [999, 'BIG'],
+            [23, 'REG'],
+            [1, 'BIG'],
+            [644, 'NONE']
           ]}
+        />
+        <Pocket<'JPYC', '枚'>
+          rate={FiveSlot}
+          walletMoney={[32000, 'JPYC']}
+          bankMoney={[32452, 'JPYC']}
+          medal={[12345, '枚']}
+          diff={[2345, '枚']}
         />
       </div>
     </Board>
