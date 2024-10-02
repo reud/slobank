@@ -4,6 +4,7 @@ import Pocket from '@renderer/components/Pocket'
 import Versions from '@renderer/components/Versions'
 import { FiveSlot } from '../../../common/consts'
 import classNames from 'classnames'
+import SlampGraph from '@renderer/components/SlampGraph'
 
 const AnyBoard = (): JSX.Element => {
   return (
@@ -33,6 +34,9 @@ const AnyBoard = (): JSX.Element => {
           medal={[12345, '枚']}
           diff={[2345, '枚']}
         />
+      </div>
+      <div className={classNames('grid', 'grid-cols-2', 'gap-4', 'py-2', 'mx-2')}>
+        <SlampGraph />
       </div>
     </Board>
   )
