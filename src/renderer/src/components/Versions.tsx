@@ -18,11 +18,11 @@ const Versions = ({ versions }: VersionsProps): JSX.Element => {
       const padding = new Array(10 - versions.length).fill(defaultValue)
       return padding.concat(versions) as ShowVersions
     }
-  }, [])
+  }, [versions])
 
   return (
     <SubBoard>
-      <div className={classNames('grid', 'grid-cols-10')}>
+      <div className={classNames('grid', 'grid-cols-10', 'h-full')}>
         {showVersions.reverse().map((v, i) => (
           <VersionStack game={v[0]} bonusType={v[1]} key={i} />
         ))}

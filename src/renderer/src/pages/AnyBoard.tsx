@@ -36,7 +36,7 @@ const AnyBoard = (): JSX.Element => {
         />
       </div>
       <div className={classNames('grid', 'grid-cols-2', 'gap-4', 'py-2', 'mx-2')}>
-        <SlampGraph />
+        <SlampGraph diffs={[-3, 0, 10, 7, 4, 1, -2, -5]} />
       </div>
     </Board>
   )
