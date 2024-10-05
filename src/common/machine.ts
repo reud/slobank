@@ -6,19 +6,6 @@ export interface Machine {
   maxBet: () => number
 }
 
-/*
-単独BIG:160個
-単独REG:100個
-リプレイ:8977個
-ブドウ:10098個
-チェリー：1952個（内68個がBIGと重複、44個がREGと重複）
-ピエロ:60個
-ベル:60個
-ハズレ:44128個
-
-計65535個
-*/
-
 const getRandomInt = (max): number => {
   return Math.floor(Math.random() * max)
 }
